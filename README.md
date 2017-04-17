@@ -1,2 +1,3 @@
 # ruby-bits
-bits of code picked from here and there
+
+These are mostly my study notes and reminders, not sure if it would be useful to anybody else.
