@@ -14,7 +14,6 @@ You shouldn't either
 
 3.to_s #=> "3"
 
-
 # Some basic arithmetic
 1 + 1 #=> 2
 8 - 1 #=> 7
