@@ -506,6 +506,9 @@ Something.new.qux # => 'qux'
 # Serialization
 # -------------
 
+# YAML
+
+
 # Require YAML
 require `yaml`
 
@@ -515,6 +518,11 @@ serialized_obj = {:name => "Dolph", :age => 21}.to_yaml
 # De-serialize from YAML
 YAML::load(serialized_obj)
 
+# JSON
+# ---------------
+
+# Note JSON standard libraries don't work well with class instances, have to make my own!
+
 # Enabling JSON
 $ gem install json
 require 'json'
@@ -523,4 +531,31 @@ require 'json'
 my_json = {:name=>"Dolph", :age=>21}.to_json
 
 # Deserialize from JSON
-JSON.parse(my_json)
+JSON.parse(my_json) 
+
+# Reading / Writing for files
+# -----------------------------
+# modes: r -> read, w -> write, a -> append ; r+ -> read/write, w+ -> read/write, a+ -> read/append
+#      : w and a creates new file if it doesn't exist
+
+# # Open the file with the specified mode
+our_file = File.open("fruits.txt", "r+")
+
+# Now output the contents of the file directly
+puts our_file.read
+
+# Close the file after we're done
+our_file.close
+#=> nil
+
+# Read the file and automatically close it
+File.read("fruits.txt")
+
+# Read the file into a new array item for each line
+File.readlines("fruits.txt")
+
+# You can run array methods on the resulting array
+# and should strip off extraneous newlines to clean it up
+File.readlines("fruits.txt").each do |line|
+  some_arr << line.strip
+end
