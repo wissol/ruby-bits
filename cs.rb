@@ -561,7 +561,9 @@ File.readlines("fruits.txt").each do |line|
   some_arr << line.strip
 end
 
+# -------------------------------
 # REGEX see more at rubular.com
+# -------------------------------
 
 # Return MatchData object for last match
 "string".match(/.*/)
