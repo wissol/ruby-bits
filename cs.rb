@@ -20,6 +20,7 @@ You shouldn't either
 8 - 1 #=> 7
 10 * 2 #=> 20
 35 / 5 #=> 7
+25 / 2 #=> 12 (for real number division 25.0 /2 => 12.5 )
 2 ** 5 #=> 32
 
 # Arithmetic is just syntactic sugar
