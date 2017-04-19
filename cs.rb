@@ -601,3 +601,23 @@ end
 # a{3}	Exactly 3 of a
 # a{3,}	3 or more of a
 # a{3,6}	Between 3 and 6 of a
+
+
+
+# ---------------------
+# Structs, aka tuples
+# ---------------------
+
+
+
+# Create the basic Coordinate class using a Struct
+Coordinate = Struct.new(:x, :y)   # Note the capitalization
+
+# Alternate syntax for Struct creation
+Struct.new("Coordinate", :x, :y)
+
+# Build a struct instance
+pair1 = Coordinate.new(12,-2)
+
+# Access attributes like you would a normal object
+pair1.x
