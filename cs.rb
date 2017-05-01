@@ -621,3 +621,26 @@ pair1 = Coordinate.new(12,-2)
 
 # Access attributes like you would a normal object
 pair1.x
+
+
+
+
+# --------------------------
+
+
+
+
+# Tests 
+# =========
+
+# Doubles
+# =========
+
+# Get a blank double
+my_thing = double
+
+# Get a blank double... with an identifier!
+# Note that the string you pass here is completely
+#   meaningless (unlike with "verifying doubles"
+#   which we'll cover shortly). Name it anything!
+my_thing_with_name = double("thing")
