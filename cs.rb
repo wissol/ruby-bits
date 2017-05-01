@@ -94,9 +94,9 @@ path_to_project_root = '/good/name/'
 path = '/bad/name/'
 
 # Symbols (are objects)
-# Symbols are immutable, reusable constants 
-# represented internally by an integer value. 
-# They're often used instead of strings to 
+# Symbols are immutable, reusable constants
+# represented internally by an integer value.
+# They're often used instead of strings to
 # efficiently convey specific, meaningful values
 
 :pending.class #=> Symbol
@@ -151,11 +151,11 @@ hash.keys #=> ['color', 'number']
 hash['color'] #=> 'green'
 hash['number'] #=> 5
 
-# Asking a hash for a key that doesn't 
+# Asking a hash for a key that doesn't
 # exist returns nil:
 hash['nothing here'] #=> nil
 
-# Since Ruby 1.9, there's a special syntax when 
+# Since Ruby 1.9, there's a special syntax when
 # using symbols as keys:
 
 new_hash = { defcon: 3, action: true}
@@ -163,7 +163,7 @@ new_hash = { defcon: 3, action: true}
 new_hash.keys #=> [:defcon, :action]
 
 # Tip: Both Arrays and Hashes use Enumerable
-# They share a lot of useful methods such as 
+# They share a lot of useful methods such as
 # each, map, count, and more
 
 # Control structures
@@ -186,15 +186,15 @@ end
 #=> iteration 5
 
 # HOWEVER, No-one uses for loops.
-# Instead you should use the "each" method 
+# Instead you should use the "each" method
 # and pass it a block.
-# A block is a bunch of code that you can 
+# A block is a bunch of code that you can
 # pass to a method like "each".
-# It is analogous to lambdas, anonymous functions 
+# It is analogous to lambdas, anonymous functions
 # or closures in other
 # programming languages.
 #
-# The "each" method of a range runs the block 
+# The "each" method of a range runs the block
 # once for each element of the range.
 # The block is passed a counter as a parameter.
 # Calling the "each" method with a block looks like this:
@@ -255,7 +255,7 @@ case grade
     when 90..100
       puts "Hooray!"
     when 80...90
-      puts "OK job" 
+      puts "OK job"
     else
       puts "You failed!"
 end
@@ -304,14 +304,14 @@ surround { puts 'hello world' }
 
 
 # You can pass a block to a function
-# "&" marks a reference to a passed block 
+# "&" marks a reference to a passed block
 def guests(&block)
- block.call "some_argument" 
+ block.call "some_argument"
 end
 
-# You can pass a list of arguments, which 
+# You can pass a list of arguments, which
 # will be converted into an array
-# That's what splat operator ("*") is for 
+# That's what splat operator ("*") is for
 def guests(*array)
  array.each { |guest| puts "#{guest}" }
 end
@@ -319,16 +319,16 @@ end
 # Define a class with the class keyword
 class Human
 
-  # A class variable. It is shared by all 
+  # A class variable. It is shared by all
   # instances of this class.
   @@species = "H. sapiens"
 
   # Basic initializer
   def initialize(name, age=0)
-    # Assign the argument to the "name" 
+    # Assign the argument to the "name"
     # instance variable for the instance
     @name = name
-    # If no age given, we will fall back 
+    # If no age given, we will fall back
     # to the default in the arguments list.
     @age = age
   end
@@ -343,16 +343,16 @@ class Human
     @name
   end
 
-  # The above functionality can be encapsulated 
+  # The above functionality can be encapsulated
   # using the attr_accessor method as follows
   attr_accessor :name
 
-  # Getter/setter methods can also be created 
+  # Getter/setter methods can also be created
   # individually like this
   attr_reader :name
   attr_writer :name
 
-  # A class method uses self to distinguish from 
+  # A class method uses self to distinguish from
   # instance methods.
   # It can only be called on the class, not an instance.
   def self.say(msg)
@@ -399,9 +399,9 @@ defined? @@var #=> "class variable"
 Var = "I'm a constant"
 defined? Var #=> "constant"
 
-# Class also is object in ruby. So a class can 
+# Class also is object in ruby. So a class can
 # have instance variables.
-# These class variable are shared among the class 
+# These class variable are shared among the class
 # and all of its descendants.
 
 # base class
@@ -427,7 +427,7 @@ Worker.foo # 0
 Human.foo = 2 # 2
 Worker.foo # 2
 
-# Class instance variables are not shared by 
+# Class instance variables are not shared by
 # the class's descendants.
 
 class Human
@@ -454,9 +454,9 @@ module ModuleExample
   end
 end
 
-# Including modules binds the methods 
+# Including modules binds the methods
 # to the object instance
-# Extending modules binds the methods 
+# Extending modules binds the methods
 # to the class instance
 
 class Person
@@ -472,7 +472,7 @@ Person.new.foo # => 'foo'
 Book.foo       # => 'foo'
 Book.new.foo   # => NoMethodError: undefined method `foo'
 
-# Callbacks when including and extending a 
+# Callbacks when including and extending a
 # module are executed
 
 module ConcernExample
@@ -531,7 +531,7 @@ require 'json'
 my_json = {:name=>"Dolph", :age=>21}.to_json
 
 # Deserialize from JSON
-JSON.parse(my_json) 
+JSON.parse(my_json)
 
 # Reading / Writing for files
 # -----------------------------
@@ -630,7 +630,7 @@ pair1.x
 
 
 
-# Tests 
+# Tests
 # =========
 
 # Doubles
@@ -656,3 +656,20 @@ my_thing = double("thing", :attr1 => "val1", :method2 => "val2")
 # double without an identifier but with some stubs
 my_thing = double(:method1 => "val1", :method2 => "val2")
 
+
+
+
+# --------------------------------
+
+
+
+
+# Command line interface
+
+## colors
+
+require 'colorize'
+
+# row = [:blue, :red, :green, :yellow]
+
+"this is my string in black on white".colorize(:background => :white, :color=> :black)
