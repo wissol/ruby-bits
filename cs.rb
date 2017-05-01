@@ -644,3 +644,15 @@ my_thing = double
 #   meaningless (unlike with "verifying doubles"
 #   which we'll cover shortly). Name it anything!
 my_thing_with_name = double("thing")
+
+
+# To populate a double with attributes/methods, just pass them in as a hash:
+
+# for the purposes of doubles, attributes
+# and methods are the same thing.. they're each
+# just a stub (described more below)
+my_thing = double("thing", :attr1 => "val1", :method2 => "val2")
+
+# double without an identifier but with some stubs
+my_thing = double(:method1 => "val1", :method2 => "val2")
+
